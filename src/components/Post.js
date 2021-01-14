@@ -17,7 +17,7 @@ const Post = () => {
       alt
     }
   }`).then((data) => setPostData(data))
-      .catch((error) => console.error(error))
+      .catch((error) => console.error(error.message))
   }, [])
 
   return (
@@ -27,8 +27,8 @@ const Post = () => {
         <h2 className="text-lg text-grey-600 flex justify-center mb-12">Welcome to my thoughts</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {postData && postData.map((post, index) => (
-            <article>
-              <Link to={`/posts/${post.slug.current}`} key={post.slug.current}>
+            <article key={index}>
+              <Link to={`/post/${post.slug.current}`} key={post.slug.current}>
                 <span className="block h-64 relative rounded shadow leading-snug bg-white border-l-8 border-green-400" key={index}>
                   <img
                     src={post.mainImage.asset.url}

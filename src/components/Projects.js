@@ -17,7 +17,7 @@ const Projects = () => {
     }`).then((data) => setProjectData(data))
       .catch((error) => console.error)
   }, [])
-  console.log(projectData)
+
   return (
     <main className="bg-green-100 min-h-screen p-12">
       <section className="container mx-auto">
